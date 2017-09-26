@@ -27,8 +27,8 @@ function css_attributes($attributes) {
 
 
 function formtext($name,$label,$value,$attributes) {
-	$class = 'class="form-control '.css_attributes($attributes);
-	$att = attributes($attributes);
+	$class = 'class="form-control '.$this->css_attributes($attributes);
+	$att = $this->attributes($attributes);
 	return $string = '<div class="form-group form-group-default"><label for="'.$name.'">'.$label.'</label><input type="text" name="'.$name.'" id="'.$name.'" value="'.$value.'" '.$class.$att.' ></div>';
 }
 
@@ -44,8 +44,8 @@ function formcheck($name,$label,$value) {
 
 function formselect($name,$label,$value,$options,$first,$attributes) {
 	$option_list = '';
-	$class = 'class="form-control '.css_attributes($attributes);
-	$att = attributes($attributes);
+	$class = 'class="form-control '.$this->css_attributes($attributes);
+	$att = $this->attributes($attributes);
 	if($first) {
 		$option_list = '<option disabled selected>'.$first.'</option>';
 	}
@@ -64,8 +64,8 @@ function formselect($name,$label,$value,$options,$first,$attributes) {
 }
 
 function formfile($name,$label,$attributes) {
-	$class = 'class="form-control '.css_attributes($attributes);
-	$att = attributes($attributes);
+	$class = 'class="form-control '.$this->css_attributes($attributes);
+	$att = $this->attributes($attributes);
 	return $string = '<div class="form-group form-group-default"><label for="'.$name.'">'.$label.'</label><input type="file" name="'.$name.'" id="'.$name.'" '.$class.$att.' ></div>';
 }
 
