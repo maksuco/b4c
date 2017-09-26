@@ -20,7 +20,7 @@ Render text inputs:
 
 ```php
 
-  {{ \B4C::formtext($name,$label,$value,$attributes) }}
+  {!! \B4C::formtext($name,$label,$value,$attributes) !!}
   //formtext('video','Video',$property->video,['placeholder' => 'Video code'])
 
 ```
@@ -30,7 +30,7 @@ Render file inputs:
 
 ```php
 
-  {{ \B4C::formfile($name,$label,$attributes) }}
+  {!! \B4C::formfile($name,$label,$attributes) !!}
   //formfile('floorplan',__('Floor Plan'),['class' => 'mt-5','accept' => '.jpg,.jpeg,.png,.pdf'])
 
 ```
@@ -40,7 +40,7 @@ Render select inputs:
 
 ```php
 
-  {{ \B4C::formselect($name,$label,$value,$options,$first,$attributes) }}
+  {!! \B4C::formselect($name,$label,$value,$options,$first,$attributes) !!}
   //formselect('zone',__('zone'),$property->zone,['N','E','W','S','NE','NW','SE','SW'],'Choose one',['class' => 'h-20'])
 
 ```
@@ -50,7 +50,7 @@ Render checkbox inputs:
 
 ```php
 
-  {{ \B4C::formcheck($name,$label,$value) }}
+  {!! \B4C::formcheck($name,$label,$value) !!}
   //formswitch('show',__('Show'),1)
 
 ```
@@ -60,7 +60,7 @@ Render switch inputs:
 
 ```php
 
-  {{ \B4C::formswitch($name,$label,$value) }}
+  {!! \B4C::formswitch($name,$label,$value) !!}
   //formswitch('show',__('Show'),$item->show)
 
 ```
@@ -70,7 +70,7 @@ Render Radio inputs:
 
 ```php
 
-  {{ \B4C::formradio($name,$label,$value) }}
+  {!! \B4C::formradio($name,$label,$value) !!}
 
 ```
 
