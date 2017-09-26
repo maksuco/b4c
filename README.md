@@ -26,6 +26,16 @@ Render text inputs:
 ```
 
 
+Render Textarea inputs:
+
+```php
+
+  {!! \B4C::formtextarea($name,$label,$value,$attributes) !!}
+  //formtextarea('video','Video',$property->video,['css' => 'color-primary'])
+
+```
+
+
 Render file inputs:
 
 ```php
@@ -71,6 +81,16 @@ Render Radio inputs:
 ```php
 
   {!! \B4C::formradio($name,$label,$value) !!}
+
+```
+
+
+Render text/switch inputs:
+
+```php
+
+  {!! \B4C::formtextswitch($name,$label,$value,$attributes,$switch_name,$switch_value) !!}
+  //formtext('video','Video',$property->video,['placeholder' => 'Video code'],'video_on',$property->video_on)
 
 ```
 
