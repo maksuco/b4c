@@ -68,5 +68,19 @@ function formfile($name,$label,$attributes) {
 	$att = $this->attributes($attributes);
 	return $string = '<div class="form-group form-group-default"><label for="'.$name.'">'.$label.'</label><input type="file" name="'.$name.'" id="'.$name.'" '.$class.$att.' ></div>';
 }
+	
+
+function formtextarea($name,$label,$value,$attributes) {
+	$class = 'class="form-control '.$this->css_attributes($attributes);
+	$att = $this->attributes($attributes);
+	return $string = '<div class="form-group form-group-default"><label for="'.$name.'">'.$label.'</label><div class="controls"><textarea name="'.$name.'" id="'.$name.'" '.$class.$att.' >'.$value.'</textarea></div>';
+}
+
+
+function formtextswitch($name,$label,$value,$attributes,$switch_name,$switch_value) {
+	$class = 'class="form-control '.$this->css_attributes($attributes);
+	$att = $this->attributes($attributes);
+	return $string = '<div class="form-group form-group-default"><label for="'.$name.'">'.$label.'<span class="label-switch float-right" style="position: absolute; right: 5px;"><input type="checkbox" value="1" name="sell" checked=""></span></label><input type="text" name="'.$name.'" id="'.$name.'" value="'.$value.'" '.$class.$att.' ></div>';
+}
 
 }
