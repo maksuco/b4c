@@ -31,7 +31,7 @@
                 "Maksuco\\B4C\\B4CServiceProvider"
             ],
             "aliases": {
-                "B4C": "Maksuco\\B4Cs\\Facades\\B4C"
+                "B4C": "Maksuco\\B4C\\Facades\\B4C"
             }
         }
     }
