@@ -26,23 +26,13 @@ function css_attributes($attributes) {
 }
 
 
-function formtext($name,$label,$value,$attributes) {
+function text($name,$label,$value,$attributes,$extra) {
 	$class = 'class="form-control '.$this->css_attributes($attributes);
 	$att = $this->attributes($attributes);
-	return $string = '<div class="form-group form-group-default"><label for="'.$name.'">'.$label.'</label><input type="text" name="'.$name.'" id="'.$name.'" value="'.$value.'" '.$class.$att.' ></div>';
+	return $string = '<div class="form-group form-group-default"><label for="'.$name.'">'.$label.'</label><input type="text" name="'.$name.'" id="'.$name.'" value="'.$value.'" '.$class.$att.' '.$extra.' ></div>';
 }
 
-function formswitch($name,$label,$value) {
-	$check = ($value == 1)? 'checked' : '';
-	return $string = '<div class="form-group"><label>'.$label.'</label><div class="controls"><span class="label-switch"><input type="checkbox" name="'.$name.'" id="'.$name.'" value="'.$value.'" '.$check.' ></span></div></div>';
-}
-
-
-function formcheck($name,$label,$value) {
-	return $string = '<div class="form-group form-group-default"><label for="'.$name.'">'.$label.'</label><input type="text" name="'.$name.'" id="'.$name.'" value="'.$value.'" '.$class.$att.' ></div>';
-}
-
-function formselect($name,$label,$value,$options,$first,$attributes) {
+function select($name,$label,$value,$options,$first,$attributes,$extra) {
 	$option_list = '';
 	$class = 'class="form-control '.$this->css_attributes($attributes);
 	$att = $this->attributes($attributes);
@@ -63,24 +53,42 @@ function formselect($name,$label,$value,$options,$first,$attributes) {
 	return $string = '<div class="form-group form-group-default"><label for="'.$name.'">'.$label.'</label><select name="'.$name.'" id="'.$name.'" '.$class.$att.' >'.$option_list.'</select></div>';
 }
 
-function formfile($name,$label,$attributes) {
+function file($name,$label,$attributes,$extra) {
 	$class = 'class="form-control '.$this->css_attributes($attributes);
 	$att = $this->attributes($attributes);
-	return $string = '<div class="form-group form-group-default"><label for="'.$name.'">'.$label.'</label><input type="file" name="'.$name.'" id="'.$name.'" '.$class.$att.' ></div>';
+	return $string = '<div class="form-group form-group-default"><label for="'.$name.'">'.$label.'</label><input type="file" name="'.$name.'" id="'.$name.'" '.$class.$att.' '.$extra.' ></div>';
 }
 	
 
-function formtextarea($name,$label,$value,$attributes) {
+function textarea($name,$label,$value,$attributes) {
 	$class = 'class="form-control '.$this->css_attributes($attributes);
 	$att = $this->attributes($attributes);
 	return $string = '<div class="form-group form-group-default"><label for="'.$name.'">'.$label.'</label><div class="controls"><textarea name="'.$name.'" id="'.$name.'" '.$class.$att.' >'.$value.'</textarea></div>';
 }
 
 
-function formtextswitch($name,$label,$value,$attributes,$switch_name,$switch_value) {
+function textswitch($name,$label,$value,$attributes,$switch_name,$switch_value) {
 	$class = 'class="form-control '.$this->css_attributes($attributes);
 	$att = $this->attributes($attributes);
-	return $string = '<div class="form-group form-group-default"><label for="'.$name.'">'.$label.'<span class="label-switch float-right" style="position: absolute; right: 5px;"><input type="checkbox" value="1" name="sell" checked=""></span></label><input type="text" name="'.$name.'" id="'.$name.'" value="'.$value.'" '.$class.$att.' ></div>';
+	$check = ($switch_value == 1)? 'checked' : '';
+	return $string = '<div class="form-group form-group-default"><label for="'.$name.'">'.$label.'<span class="label-switch float-right" style="position: absolute; right: 5px;"><input type="checkbox" value="1" name="'.$switch_name.'" '.$check.' ></span></label><input type="text" name="'.$name.'" id="'.$name.'" value="'.$value.'" '.$class.$att.' ></div>';
+}
+
+function switch($name,$label,$value,$extra) {
+	$check = ($value == 1)? 'checked' : '';
+	return $string = '<div class="form-group"><label>'.$label.'</label><div class="controls"><span class="label-switch"><input type="checkbox" name="'.$name.'" id="'.$name.'" value="'.$value.'" '.$extra.' '.$check.' ></span></div></div>';
+}
+
+
+function checkbox($name,$label,$value,$extra) {
+	$check = ($value == 1)? 'checked' : '';
+	return '<label class="custom-control custom-checkbox"><input id="'.$name.'" name="'.$name.'" type="checkbox" class="custom-control-input" '.$extra.' '.$check.'><span class="custom-control-indicator"></span><span class="custom-control-description mt-5">'.$label.'</span></label>';
+}
+
+
+function radio($name,$label,$value,$extra) {
+	$check = ($value == 1)? 'checked' : '';
+	return '<label class="custom-control custom-radio"><input id="'.$name.'" name="'.$name.'" type="radio" class="custom-control-input" '.$extra.' '.$check.'><span class="custom-control-indicator"></span><span class="custom-control-description mt-5">'.$label.'</span></label>';
 }
 
 }
