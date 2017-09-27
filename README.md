@@ -20,8 +20,8 @@ Render text inputs:
 
 ```php
 
-  {!! \B4C::formtext($name,$label,$value,$attributes) !!}
-  //formtext('video','Video',$property->video,['placeholder' => 'Video code'])
+  {!! \B4C::text($name,$label,$value,$attributes,$extra) !!}
+  //formtext('video','Video',$property->video,['placeholder' => 'Video code'],'required')
 
 ```
 
@@ -30,7 +30,7 @@ Render Textarea inputs:
 
 ```php
 
-  {!! \B4C::formtextarea($name,$label,$value,$attributes) !!}
+  {!! \B4C::textarea($name,$label,$value,$attributes) !!}
   //formtextarea('video','Video',$property->video,['css' => 'color-primary'])
 
 ```
@@ -40,8 +40,8 @@ Render file inputs:
 
 ```php
 
-  {!! \B4C::formfile($name,$label,$attributes) !!}
-  //formfile('floorplan',__('Floor Plan'),['class' => 'mt-5','accept' => '.jpg,.jpeg,.png,.pdf'])
+  {!! \B4C::file($name,$label,$attributes,$extra) !!}
+  //formfile('floorplan',__('Floor Plan'),['class' => 'mt-5','accept' => '.jpg,.jpeg,.png,.pdf'],'required')
 
 ```
 
@@ -50,8 +50,8 @@ Render select inputs:
 
 ```php
 
-  {!! \B4C::formselect($name,$label,$value,$options,$first,$attributes) !!}
-  //formselect('zone',__('zone'),$property->zone,['N','E','W','S','NE','NW','SE','SW'],'Choose one',['class' => 'h-20'])
+  {!! \B4C::select($name,$label,$value,$options,$first,$attributes,$extra) !!}
+  //formselect('zone',__('zone'),$property->zone,['N','E','W','S','NE','NW','SE','SW'],'Choose one',['class' => 'h-20'],'')
 
 ```
 
@@ -60,7 +60,7 @@ Render checkbox inputs:
 
 ```php
 
-  {!! \B4C::formcheck($name,$label,$value) !!}
+  {!! \B4C::check($name,$label,$value,$extra,'disabled') !!}
   //formswitch('show',__('Show'),1)
 
 ```
@@ -70,7 +70,7 @@ Render switch inputs:
 
 ```php
 
-  {!! \B4C::formswitch($name,$label,$value) !!}
+  {!! \B4C::switch($name,$label,$value,$extra,'') !!}
   //formswitch('show',__('Show'),$item->show)
 
 ```
@@ -80,7 +80,7 @@ Render Radio inputs:
 
 ```php
 
-  {!! \B4C::formradio($name,$label,$value) !!}
+  {!! \B4C::radio($name,$label,$value,$extra,'') !!}
 
 ```
 
@@ -89,7 +89,7 @@ Render text/switch inputs:
 
 ```php
 
-  {!! \B4C::formtextswitch($name,$label,$value,$attributes,$switch_name,$switch_value) !!}
+  {!! \B4C::textswitch($name,$label,$value,$attributes,$switch_name,$switch_value) !!}
   //formtext('video','Video',$property->video,['placeholder' => 'Video code'],'video_on',$property->video_on)
 
 ```
