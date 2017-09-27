@@ -63,7 +63,7 @@ function file($name,$label,$attributes,$extra) {
 function textarea($name,$label,$value,$attributes) {
 	$class = 'class="form-control '.$this->css_attributes($attributes);
 	$att = $this->attributes($attributes);
-	return $string = '<div class="form-group form-group-default"><label for="'.$name.'">'.$label.'</label><div class="controls"><textarea name="'.$name.'" id="'.$name.'" '.$class.$att.' >'.$value.'</textarea></div>';
+	return $string = '<div class="form-group form-group-default"><label for="'.$name.'">'.$label.'</label><div class="controls"><textarea name="'.$name.'" id="'.$name.'" '.$class.$att.' >'.$value.'</textarea></div></div>';
 }
 
 
