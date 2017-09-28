@@ -20,8 +20,8 @@ Render text inputs:
 
 ```php
 
-  {!! \B4C::text($name,$label,$value,$attributes,$extra) !!}
-  //formtext('video','Video',$property->video,['placeholder' => 'Video code'],'required')
+  {!! \B4C::text($name,$label,$value,$attributes,$extra,$version) !!}
+  //formtext('video','Video',$property->video,['placeholder' => 'Video code'],'required','form-group-default')
 
 ```
 
@@ -30,8 +30,8 @@ Render Textarea inputs:
 
 ```php
 
-  {!! \B4C::textarea($name,$label,$value,$attributes) !!}
-  //formtextarea('video','Video',$property->video,['css' => 'color-primary'])
+  {!! \B4C::textarea($name,$label,$value,$attributes,$version) !!}
+  //formtextarea('video','Video',$property->video,['css' => 'color-primary'],'')
 
 ```
 
@@ -40,8 +40,8 @@ Render file inputs:
 
 ```php
 
-  {!! \B4C::file($name,$label,$attributes,$extra) !!}
-  //formfile('floorplan',__('Floor Plan'),['class' => 'mt-5','accept' => '.jpg,.jpeg,.png,.pdf'],'required')
+  {!! \B4C::file($name,$label,$attributes,$extra,$version) !!}
+  //formfile('floorplan',__('Floor Plan'),['class' => 'mt-5','accept' => '.jpg,.jpeg,.png,.pdf'],'required','')
 
 ```
 
@@ -50,8 +50,8 @@ Render select inputs:
 
 ```php
 
-  {!! \B4C::select($name,$label,$value,$options,$first,$attributes,$extra) !!}
-  //formselect('zone',__('zone'),$property->zone,['N','E','W','S','NE','NW','SE','SW'],'Choose one',['class' => 'h-20'],'')
+  {!! \B4C::select($name,$label,$value,$options,$first,$attributes,$extra,$version) !!}
+  //formselect('zone',__('zone'),$property->zone,['N','E','W','S','NE','NW','SE','SW'],'Choose one',['class' => 'h-20'],'','')
 
 ```
 
