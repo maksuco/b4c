@@ -29,6 +29,12 @@ function css_attributes($attributes) {
 function text($name,$label,$value,$attributes,$extra) {
 	$class = 'class="form-control '.$this->css_attributes($attributes);
 	$att = $this->attributes($attributes);
+	return $string = '<div class="form-group"><label for="'.$name.'">'.$label.'</label><input type="text" name="'.$name.'" id="'.$name.'" value="'.$value.'" '.$class.$att.' '.$extra.' ></div>';
+}
+
+function text_default($name,$label,$value,$attributes,$extra) {
+	$class = 'class="form-control '.$this->css_attributes($attributes);
+	$att = $this->attributes($attributes);
 	return $string = '<div class="form-group form-group-default"><label for="'.$name.'">'.$label.'</label><input type="text" name="'.$name.'" id="'.$name.'" value="'.$value.'" '.$class.$att.' '.$extra.' ></div>';
 }
 
