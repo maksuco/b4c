@@ -26,19 +26,13 @@ function css_attributes($attributes) {
 }
 
 
-function text($name,$label,$value,$attributes,$extra) {
+function text($name,$label,$value,$attributes,$extra,$version) {
 	$class = 'class="form-control '.$this->css_attributes($attributes);
 	$att = $this->attributes($attributes);
-	return $string = '<div class="form-group"><label for="'.$name.'">'.$label.'</label><input type="text" name="'.$name.'" id="'.$name.'" value="'.$value.'" '.$class.$att.' '.$extra.' ></div>';
+	return $string = '<div class="form-group '.$version.'"><label for="'.$name.'">'.$label.'</label><input type="text" name="'.$name.'" id="'.$name.'" value="'.$value.'" '.$class.$att.' '.$extra.' ></div>';
 }
 
-function text_default($name,$label,$value,$attributes,$extra) {
-	$class = 'class="form-control '.$this->css_attributes($attributes);
-	$att = $this->attributes($attributes);
-	return $string = '<div class="form-group form-group-default"><label for="'.$name.'">'.$label.'</label><input type="text" name="'.$name.'" id="'.$name.'" value="'.$value.'" '.$class.$att.' '.$extra.' ></div>';
-}
-
-function select($name,$label,$value,$options,$first,$attributes,$extra) {
+function select($name,$label,$value,$options,$first,$attributes,$extra,$version) {
 	$option_list = '';
 	$class = 'class="form-control '.$this->css_attributes($attributes);
 	$att = $this->attributes($attributes);
@@ -56,20 +50,20 @@ function select($name,$label,$value,$options,$first,$attributes,$extra) {
 			$option_list = $option_list.'<option value="'.$key.'" '.$selected.' >'.$key.'</option>';
 		}
 	}
-	return $string = '<div class="form-group form-group-default"><label for="'.$name.'">'.$label.'</label><select name="'.$name.'" id="'.$name.'" '.$class.$att.' >'.$option_list.'</select></div>';
+	return $string = '<div class="form-group '.$version.'"><label for="'.$name.'">'.$label.'</label><select name="'.$name.'" id="'.$name.'" '.$class.$att.' >'.$option_list.'</select></div>';
 }
 
-function file($name,$label,$attributes,$extra) {
+function file($name,$label,$attributes,$extra,$version) {
 	$class = 'class="form-control '.$this->css_attributes($attributes);
 	$att = $this->attributes($attributes);
-	return $string = '<div class="form-group form-group-default"><label for="'.$name.'">'.$label.'</label><input type="file" name="'.$name.'" id="'.$name.'" '.$class.$att.' '.$extra.' ></div>';
+	return $string = '<div class="form-group '.$version.'"><label for="'.$name.'">'.$label.'</label><input type="file" name="'.$name.'" id="'.$name.'" '.$class.$att.' '.$extra.' ></div>';
 }
 	
 
-function textarea($name,$label,$value,$attributes) {
+function textarea($name,$label,$value,$attributes,$version) {
 	$class = 'class="form-control '.$this->css_attributes($attributes);
 	$att = $this->attributes($attributes);
-	return $string = '<div class="form-group form-group-default"><label for="'.$name.'">'.$label.'</label><div class="controls"><textarea name="'.$name.'" id="'.$name.'" '.$class.$att.' >'.$value.'</textarea></div></div>';
+	return $string = '<div class="form-group '.$version.'"><label for="'.$name.'">'.$label.'</label><div class="controls"><textarea name="'.$name.'" id="'.$name.'" '.$class.$att.' >'.$value.'</textarea></div></div>';
 }
 
 
